@@ -32,7 +32,7 @@ def play(deck):
       #####################################################################################
       # check if it is possible to use .pop() function to append cards to the discard_pile
       #####################################################################################
-      if turn_A: card_to_play = deck_A.pop()
+      if turn_A:# card_to_play = deck_A.pop()
         card_to_play = deck_A[0]
         deck_A = deck_A[1:]
       else: 
