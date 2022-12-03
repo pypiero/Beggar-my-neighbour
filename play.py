@@ -30,17 +30,8 @@ def play(deck):
         break
 
       #draw a card from the right deck and put it in the discard pile
-      #####################################################################################
-      # check if it is possible to use .pop() function to append cards to the discard_pile
-      #####################################################################################
-      if turn_A:# card_to_play = deck_A.pop()
-        card_to_play = deck_A[0]
-        deck_A = deck_A[1:]
-      else: 
-        card_to_play = deck_B[0]
-        deck_B = deck_B[1:]
-
-      discard_pile.append(card_to_play)
+      if turn_A: discard_pile.append(deck_A.pop(0))
+      else: discard_pile.append(deck_B.pop(0))
      
       # check battle status
       if not Battle:
@@ -84,5 +75,6 @@ def main():
 
   #for i in range(0,n_play): n_turns.append(play(shuffle_deck()))
   #print(n_turns)
+
 
 main()
