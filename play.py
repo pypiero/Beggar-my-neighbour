@@ -1,3 +1,4 @@
+#! usr/env/boin Python3
 import random
 
 '''function that generate a shuffled 52 cards deck'''
