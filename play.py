@@ -1,4 +1,4 @@
-#! usr/env/boin Python3
+#!/usr/bin/env python3
 import random
 
 '''function that generate a shuffled 52 cards deck'''
@@ -84,4 +84,5 @@ def main():
 
   #for i in range(0,n_play): n_turns.append(play(shuffle_deck()))
   #print(n_turns)
+
 main()
