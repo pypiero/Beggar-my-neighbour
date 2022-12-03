@@ -9,22 +9,17 @@ def shuffle_deck():
 
 #funtion that play a cavacamisa game
 def play(deck):
-	# split the deck in 2
-    deck_A, deck_B = deck[:len(deck)//2], deck[len(deck)//2:]
-    # no battle at first
     Battle = False 
-    # empty discard pile
     discard_pile = [] 
-    # the first player starts
-    turn_A = True 
+    turn_A = True #first player to start
     turn_count = 0
     turns_to_do = int
 
+	# split the deck in 2
+    deck_A, deck_B = deck[:len(deck)//2], deck[len(deck)//2:]
+
     while deck_A and deck_B:
-      #uncomment to print each turn
-      #print('turn n ', turn_count, ':\ndeck A: ',deck_A,'\ndeck B: ',deck_B,'\n discard: ', discard_pile)
       turn_count += 1
-      #uncomment to stop the game if the play is longer than 5k turns
       if turn_count == 5000: 
         print('play with more than 5000 turns: ',deck)
         break
@@ -47,7 +42,6 @@ def play(deck):
           turns_to_do = discard_pile[-1] 
           turn_A = not turn_A 
           continue
-
         else: # if the card played is not 'special'
           if turns_to_do == 1: # check if it's the last turn of battle
             Battle = False
@@ -62,14 +56,12 @@ def play(deck):
       
     return turn_count
 
-
-
 def main():
   n_play = 10
   n_turns = []
 
   #test stuff:
-  sample_deck =[0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 2, 0, 0, 1, 1, 3, 4, 0, 0, 4, 0, 1, 0, 4, 0, 0, 0, 0, 3, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 2, 0, 4, 0, 0, 3, 1, 0, 0, 0]
+  sample_deck =[0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 1, 1, 3, 4, 0, 0, 4, 0, 1, 0, 4, 0, 0, 0, 0, 3, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 2, 0, 4, 0, 0, 3, 1, 0, 0, 0]
   print(play(sample_deck))
 
 
