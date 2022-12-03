@@ -1,6 +1,2 @@
 # cavacamisa
-Simulating beggar-my-neighborn
-
-modifica aggiunta online
-seconda modifica
-This repo will be used as test for github.
+A script to simulate the cavacamisa game
