@@ -3,9 +3,9 @@ import random
 
 '''function that generate a shuffled 52 cards deck'''
 def shuffled_deck():
-	deck = 4*[1]+4*[2]+4*[3]+4*[4]+36*[0]
-	random.shuffle(deck)
-	return deck
+  standard_deck = 4*[1] + 4*[2] + 4*[3] + 4*[4] + 36*[0]
+  random.shuffle(standard_deck)
+  return standard_deck
 
 #funtion that play a cavacamisa game
 def play(deck):
@@ -58,7 +58,7 @@ def play(deck):
 
 def single_fixed_play():
   sample_deck =[0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 1, 1, 3, 4, 0, 0, 4, 0, 1, 0, 4, 0, 0, 0, 0, 3, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 2, 0, 4, 0, 0, 3, 1, 0, 0, 0]
-  print('fixed play: ',play(sample_deck))
+  print('fixed play (349): ',play(sample_deck))
 
 def random_play(number_of_play):
   n_turns = []
