@@ -57,16 +57,18 @@ def play(deck):
     return turn_count
 
 def single_fixed_play():
-  sample_deck =[0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 1, 1, 3, 4, 0, 0, 4, 0, 1, 0, 4, 0, 0, 0, 0, 3, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 2, 0, 4, 0, 0, 3, 1, 0, 0, 0]
+  sample_deck =[0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 1, 1, 3, 4, 0, 0, 4, 0, 1, 0, 4, 0, 0, 0, 0,
+   3, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 2, 0, 4, 0, 0, 3, 1, 0, 0, 0]
   print('fixed play (349): ',play(sample_deck))
 
 def random_play(number_of_play):
   n_turns = []
   for i in range(0,number_of_play):  n_turns.append(play(shuffled_deck()))
-  print('10 random play:',n_turns)
+  n_turns.sort(reverse=True)
+  print('10 longest random play in ',number_of_play,' plays: ', n_turns[:10])
 
 def main():
   single_fixed_play()
-  random_play(10)
+  random_play(1000000)
 
 main()
