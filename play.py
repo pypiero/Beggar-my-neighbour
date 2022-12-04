@@ -56,16 +56,16 @@ def play(deck):
       
     return turn_count
 
-def main():
-  n_play = 10
-  n_turns = []
-
-  #test stuff:
+def single_fixed_play():
   sample_deck =[0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 1, 1, 3, 4, 0, 0, 4, 0, 1, 0, 4, 0, 0, 0, 0, 3, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 2, 0, 4, 0, 0, 3, 1, 0, 0, 0]
-  print(play(sample_deck))
+  print('fixed play: ',play(sample_deck))
 
+def random_play(number_of_play):
+  n_turns = []
+  for i in range(0,number_of_play):  n_turns.append(play(shuffled_deck()))
+  print('10 random play:',n_turns)
 
-  #for i in range(0,n_play): n_turns.append(play(shuffle_deck()))
-  #print(n_turns)
-
+def main():
+  single_fixed_play()
+  random_play(10)
 main()
