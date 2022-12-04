@@ -68,5 +68,4 @@ def main():
   #for i in range(0,n_play): n_turns.append(play(shuffle_deck()))
   #print(n_turns)
 
-
 main()
