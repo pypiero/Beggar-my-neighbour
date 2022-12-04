@@ -2,7 +2,7 @@
 import random
 
 '''function that generate a shuffled 52 cards deck'''
-def shuffle_deck():
+def shuffled_deck():
 	deck = 4*[1]+4*[2]+4*[3]+4*[4]+36*[0]
 	random.shuffle(deck)
 	return deck
