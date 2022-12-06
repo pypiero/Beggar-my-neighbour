@@ -3,9 +3,11 @@ from itertools import combinations
 
 
 def main():
-	a = combinations('AAAAAAA',4)
+	list1 = '11110000222233334444'
+	a = combinations(list1,20)
+	print(len(list1))
 	b = [''.join(i) for i in a]
-	print(b)
+	print(len(b))
 
 main()
 
