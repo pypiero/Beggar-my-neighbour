@@ -56,11 +56,7 @@ def play(deck, max_turn=5000):
       
     return turn_count
 
-def single_fixed_play():
-  sample_deck =[3, 0, 0, 0, 1, 0, 0, 0, 0, 3, 1, 2, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 3, 4, 0, 0, 3, 0, 1, 0, 0, 2, 0, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 2, 0, 0, 0, 0, 0, 4, 0]
-  print('fixed play (3076): ',play(sample_deck))
-
-def test_plays():
+def test_long_plays():
   decks = [[2, 4, 0, 0, 0, 4, 0, 0, 3, 0, 1, 0, 1, 0, 3, 0, 4, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 3, 0, 2, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 2, 1, 0]
             ,[4, 1, 4, 0, 0, 0, 0, 4, 2, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 2, 3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1, 0, 3, 0]
             ]
@@ -69,12 +65,11 @@ def test_plays():
 
 def random_play(number_of_play):
   n_turns = []
-  for i in range(0,number_of_play):  n_turns.append(play(shuffled_deck(),3351))
+  for i in range(0,number_of_play):  n_turns.append(play(shuffled_deck(),3748))
   n_turns.sort(reverse=True)
   print('10 longest random play in ',number_of_play,' plays: ', n_turns[:10])
 
 def main():
-  #single_fixed_play()
-  test_plays()
+  test_long_plays()
   random_play(100000000)
 main()
