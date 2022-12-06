@@ -8,7 +8,7 @@ def shuffled_deck():
   return standard_deck
 
 #funtion that play a cavacamisa game
-def play(deck):
+def play(deck, max_turn=5000):
     Battle = False 
     discard_pile = [] 
     turn_A = True #first player to start
@@ -20,8 +20,8 @@ def play(deck):
 
     while deck_A and deck_B:
       turn_count += 1
-      if turn_count == 5000: 
-        print('play with more than 5000 turns: ',deck)
+      if turn_count == max_turn: 
+        print('play with more than ',str(max_turn),' turns:\n',deck)
         break
 
       #draw a card from the right deck and put it in the discard pile
@@ -57,9 +57,8 @@ def play(deck):
     return turn_count
 
 def single_fixed_play():
-  sample_deck =[0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 1, 1, 3, 4, 0, 0, 4, 0, 1, 0, 4, 0, 0, 0, 0,
-   3, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 2, 0, 4, 0, 0, 3, 1, 0, 0, 0]
-  print('fixed play (349): ',play(sample_deck))
+  sample_deck =[3, 0, 0, 0, 1, 0, 0, 0, 0, 3, 1, 2, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 3, 4, 0, 0, 3, 0, 1, 0, 0, 2, 0, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 2, 0, 0, 0, 0, 0, 4, 0]
+  print('fixed play (3076): ',play(sample_deck))
 
 def random_play(number_of_play):
   n_turns = []
@@ -69,6 +68,5 @@ def random_play(number_of_play):
 
 def main():
   single_fixed_play()
-  random_play(1000000)
-
+  random_play(10000)
 main()
