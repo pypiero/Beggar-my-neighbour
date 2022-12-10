@@ -75,8 +75,6 @@ def random_play(number_of_play):
 
 def main():
   test_long_plays()
-  random_play(100)
+  random_play(100000)
 main()
 
-a = [0] * (10^20)
-print(a[10^15] == 1)

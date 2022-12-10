@@ -28,7 +28,10 @@ total = len(list(aces))*len(list(twos))*len(list(threes))*len(list(fourths))
 print('n totale di combinazioni: ', str(total))
 print('ordine di grandezza: ',len(str(total))-1)
 
-
+#per capire se si può fare una lista enorme e consultare se il valore vale 1 o 0. 
+#questo serve a capire se abbiamo già fatto quella partita
+a = [0] * (10^20)
+print(a[10^15] == 1)
 
 '''
 TO IMPLEMENT:
