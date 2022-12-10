@@ -15,10 +15,13 @@ def play(deck, max_turn=5000):
     turn_count = 0
     turns_to_do = int
 
+    n_even_deck = 0
+
 	# split the deck in 2
     deck_A, deck_B = deck[:len(deck)//2], deck[len(deck)//2:]
 
     while deck_A and deck_B:
+      n_even_deck += 1 * (len(deck_A) == 26)
       turn_count += 1
       if turn_count == max_turn: 
         print('play with more than ',str(max_turn),' turns:\n',deck)
@@ -54,7 +57,7 @@ def play(deck, max_turn=5000):
             turns_to_do -=1
             continue#next turn, same player
       
-    return turn_count
+    return turn_count, n_even_deck
 
 def test_long_plays():
   decks = [[2, 4, 0, 0, 0, 4, 0, 0, 3, 0, 1, 0, 1, 0, 3, 0, 4, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 3, 0, 2, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 2, 1, 0]
@@ -66,10 +69,14 @@ def test_long_plays():
 def random_play(number_of_play):
   n_turns = []
   for i in range(0,number_of_play):  n_turns.append(play(shuffled_deck(),3748))
-  n_turns.sort(reverse=True)
+  #n_turns.sort(reverse=True)
+  n_turns.sort(key= lambda x: -x[1])
   print('10 longest random play in ',number_of_play,' plays: ', n_turns[:10])
 
 def main():
   test_long_plays()
-  random_play(100000000)
+  random_play(100)
 main()
+
+a = [0] * (10^20)
+print(a[10^15] == 1)
