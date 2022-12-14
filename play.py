@@ -2,15 +2,14 @@
 import random
 
 '''function that generate a shuffled 52 cards deck'''
-def shuffled_deck():
-  standard_deck = 4*[1] + 4*[2] + 4*[3] + 4*[4] + 36*[0]
-  random.shuffle(standard_deck)
-  return standard_deck
+def shuffled_deck(italian_deck=False):
+  if italian_deck: 
+    deck = 4*[1] + 4*[2] + 4*[3]  + 28*[0]
+  else:
+    deck = 4*[1] + 4*[2] + 4*[3] + 4*[4] + 36*[0]
+  random.shuffle(deck)
+  return deck
 
-def shuffled_italian_deck():
-  standard_deck = 4*[1] + 4*[2] + 4*[3]  + 28*[0]
-  random.shuffle(standard_deck)
-  return standard_deck
 
 #funtion that play a cavacamisa game
 def play(deck, max_turn=3749):
@@ -73,20 +72,17 @@ def test_long_plays():
   for deck in decks:
     print('n of turns:',play(deck))
 
-def random_play(number_of_play, italian = False):
+def random_play(number_of_play):
   n_turns = []
   for i in range(0,number_of_play):  
-    if italian:
-      n_turns.append(play(shuffled_italian_deck(),3748))
-    else:
       n_turns.append(play(shuffled_deck(),3748))
 
-  #n_turns.sort(reverse=True)
-  n_turns.sort(key= lambda x: -x[1])
+  n_turns.sort(reverse=True)
+  #n_turns.sort(key= lambda x: -x[1])
   print('10 longest random play in ',number_of_play,' plays: ', n_turns[:10])
 
 def main():
-  test_long_plays()
+  #test_long_plays()
   random_play(1000)
-  random_play(1000,italian=True)
+  random_play(1000)
 main()
