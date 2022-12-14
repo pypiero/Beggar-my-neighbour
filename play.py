@@ -8,7 +8,7 @@ def shuffled_deck():
   return standard_deck
 
 #funtion that play a cavacamisa game
-def play(deck, max_turn=5000):
+def play(deck, max_turn=7973):
     Battle = False 
     discard_pile = [] 
     turn_A = True #first player to start
@@ -62,6 +62,7 @@ def play(deck, max_turn=5000):
 def test_long_plays():
   decks = [[2, 4, 0, 0, 0, 4, 0, 0, 3, 0, 1, 0, 1, 0, 3, 0, 4, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 3, 0, 2, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 2, 1, 0]
             ,[4, 1, 4, 0, 0, 0, 0, 4, 2, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 2, 3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1, 0, 3, 0]
+            ,[0,0,0,0,3,0,0,0,4,0,0,2,0,4,0,0,1,1,4,0,0,0,0,0,0,1,0,0,0,0,0,3,3,0,0,0,0,0,0,0,0,0,4,0,1,3,0,2,0,2,0,2]
             ]
   for deck in decks:
     print('n of turns:',play(deck))
@@ -77,4 +78,3 @@ def main():
   test_long_plays()
   random_play(100000)
 main()
-
