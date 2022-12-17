@@ -1,2 +1,2 @@
 # cavacamisa
-A script to simulate the cavacamisa game
+A script to simulate the cavacamisa game.
