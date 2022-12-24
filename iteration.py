@@ -3,13 +3,22 @@ from itertools import combinations
 from functools import reduce
 
 def main_():
-	list1 = 'ABCDA'
-	a = combinations(list1,2)
-	print(len(list1))
+	list1 = '000000001'
+	a = combinations(list1, len(list1))
+	print('len list1: ',len(list1))
 	b = [''.join(i) for i in a]
-	print(b)
+	a = set(b)
+	print('combinations: ', len(a))
+	print(a)
 
+	#https://stackoverflow.com/questions/36429507/python-combinations-without-repetitions
 
+def combination_list_no_rep():
+	list2 = [0,0,0,0,0,0,1,1,1]
+	comb_with_rep = list(combinations(list2, len(list2)))
+	comb_no_rep = set(comb_with_rep)
+	print('len comb with rep: ', len(comb_with_rep))
+	print('combinazioni senza ripetizioni: ', comb_no_rep)
 
 
 #iteratore che restituisce combinazioni possibli
@@ -36,7 +45,10 @@ a = [0] * (10^20)
 print(a[10^15] == 1)
 
 
-total_games()
+#total_games()
+main_()
+#combination_list_no_rep()
+
 
 
 '''
