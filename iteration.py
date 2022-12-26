@@ -1,24 +1,14 @@
 #!/usr/bin/env python3
 from itertools import combinations
 from functools import reduce
+from itertools import permutations
+from sympy.utilities.iterables import multiset_permutations
 
-def main_():
-	list1 = '000000001'
-	a = combinations(list1, len(list1))
-	print('len list1: ',len(list1))
+def sympy_permutations(string):
+	a = list(multiset_permutations(string))
 	b = [''.join(i) for i in a]
-	a = set(b)
-	print('combinations: ', len(a))
-	print(a)
-
-	#https://stackoverflow.com/questions/36429507/python-combinations-without-repetitions
-
-def combination_list_no_rep():
-	list2 = [0,0,0,0,0,0,1,1,1]
-	comb_with_rep = list(combinations(list2, len(list2)))
-	comb_no_rep = set(comb_with_rep)
-	print('len comb with rep: ', len(comb_with_rep))
-	print('combinazioni senza ripetizioni: ', comb_no_rep)
+	print('n combinations sympy_permutations: ', len(b))
+	#print(b)
 
 
 #iteratore che restituisce combinazioni possibli
@@ -41,15 +31,20 @@ def total_games():
 
 #per capire se si può fare una lista enorme e consultare se il valore vale 1 o 0. 
 #questo serve a capire se abbiamo già fatto quella partita
-a = [0] * (10^20)
-print(a[10^15] == 1)
+def partita_già_fatta():
+	a = [0] * (10^20)
+	print(a[10^15] == 1)
+
+def string_to_shuffle():
+	str1 = '0'*4+'1'*4+'2'*4+'3'*4
+	print ('####\nstringa originale : ', str1, ' , lunghezza: ', len(str1))
+	return str1
 
 
-#total_games()
-main_()
-#combination_list_no_rep()
-
-
+#string_comb_1(string_to_shuffle())
+#combination_list_no_rep(string_to_shuffle())
+#string_comb_2(string_to_shuffle())
+sympy_permutations(string_to_shuffle())
 
 '''
 TO IMPLEMENT:
