@@ -4,11 +4,12 @@ from functools import reduce
 from itertools import permutations
 from sympy.utilities.iterables import multiset_permutations
 
-def sympy_permutations(string):
-	a = list(multiset_permutations(string))
+def sympy_permutations(initial_deck, start_from_deck):
+	#while start_from_deck != initial_deck:
+	a = list(multiset_permutations(start_from_deck))
 	b = [''.join(i) for i in a]
 	print('n combinations sympy_permutations: ', len(b))
-	#print(b)
+	print(b)
 
 
 #iteratore che restituisce combinazioni possibli
@@ -36,15 +37,16 @@ def partita_già_fatta():
 	print(a[10^15] == 1)
 
 def string_to_shuffle():
-	str1 = '0'*4+'1'*4+'2'*4+'3'*4
+	initial_deck = '000100'
+	str1 = '000001'
 	print ('####\nstringa originale : ', str1, ' , lunghezza: ', len(str1))
-	return str1
+	return initial_deck, str1
 
 
 #string_comb_1(string_to_shuffle())
 #combination_list_no_rep(string_to_shuffle())
 #string_comb_2(string_to_shuffle())
-sympy_permutations(string_to_shuffle())
+sympy_permutations(string_to_shuffle()[0],string_to_shuffle()[1])
 
 '''
 TO IMPLEMENT:
@@ -58,7 +60,10 @@ TO IMPLEMENT:
 ''' TOTAL GAME: 653534134886878245000 '''
 #653534134886878245000, 334973944305000 *2 perche anche secondo mazzo
 
-
 #simulazione con una carta buona in un mazzo
 
-# usefull resource: https://docs.python.org/3/library/itertools.html
+''' da controllare se posso partire l'iterazione da un punto X e se lui parte in ordine da li 
+a fare le partite. praticamente sarebbe come mettere un segnalibro. quindi controllare se posso
+partire ogni volta dal segnalibro SENZA creare il big database! quindi fare andare il programma 
+per un tot di minuti o finchè non finisce un tot di partite o comunque se le finisce tutte si
+deve fermare, cioè quando il deck è tornato in posizione iniziale.'''
