@@ -1,6 +1,6 @@
 
 # Beggar my neighbour
-Simulate a play of Beggar-my-neighbour game.
+an algorythm to simulate the popular venetian game 'Cavacamisa', also known as 'Pelagallina' or 'Straccia camicia', or internationally known as 'Beggar-my-neighbour' or 'Strip Jack Naked'. 
 Given a list of cards it will return the number of turns played in the game.
 
 ## Usage
